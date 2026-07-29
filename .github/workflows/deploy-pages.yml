@@ -28,7 +28,8 @@ jobs:
           cache: npm
 
       - name: Abhängigkeiten installieren
-        run: npm ci --ignore-scripts
+        run: npm ci --ignore-scripts --no-audit --no-fund --prefer-offline
+        timeout-minutes: 8
 
       - name: Statische React-Anwendung bauen
         run: npm run build:pages
