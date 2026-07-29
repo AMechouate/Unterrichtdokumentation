@@ -10,6 +10,7 @@ const WHITE = "FFFFFF";
 const TEXT = "263746";
 
 function formatDate(date: string) {
+  if (!date) return "Kein Datum";
   return new Intl.DateTimeFormat("de-DE", {
     weekday: "long",
     day: "2-digit",
@@ -30,7 +31,7 @@ function download(blob: Blob, filename: string) {
   document.body.appendChild(anchor);
   anchor.click();
   anchor.remove();
-  URL.revokeObjectURL(url);
+  window.setTimeout(() => URL.revokeObjectURL(url), 1_000);
 }
 
 function addPdfSection(

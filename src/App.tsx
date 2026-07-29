@@ -11,10 +11,13 @@ import {
 const course = courseData as CourseData;
 
 function today() {
-  return new Date().toISOString().slice(0, 10);
+  const current = new Date();
+  const local = new Date(current.getTime() - current.getTimezoneOffset() * 60_000);
+  return local.toISOString().slice(0, 10);
 }
 
 function longDate(value: string) {
+  if (!value) return "Datum auswählen";
   return new Intl.DateTimeFormat("de-DE", {
     weekday: "long",
     day: "2-digit",
@@ -140,6 +143,7 @@ export default function App() {
             <span>Datum</span>
             <input
               type="date"
+              required
               value={date}
               onChange={(event) => setDate(event.target.value)}
             />
