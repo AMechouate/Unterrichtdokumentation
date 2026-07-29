@@ -65,7 +65,16 @@ Vor einer öffentlichen Veröffentlichung dürfen dort keine echten Teilnehmerda
 
 ## Veröffentlichung
 
-Das Projekt kann in GitHub gespeichert werden. Für GitHub Pages muss zusätzlich ein rein statischer Build- und Deployment-Workflow eingerichtet werden. Dieser Prototyp ist für die aktuelle Sites-Laufzeit vorbereitet und kann dort direkt veröffentlicht werden.
+Das Repository enthält zwei geprüfte Ausgaben:
+
+- `npm run build` erstellt die Sites-Version.
+- `npm run build:pages` erstellt die rein statische React-Version für GitHub Pages.
+
+Der Workflow [`.github/workflows/deploy-pages.yml`](./.github/workflows/deploy-pages.yml) veröffentlicht die statische Version nach jedem Push auf den Branch `main`. Die vorgesehene Adresse lautet:
+
+`https://amechouate.github.io/Unterrichtdokumentation/`
+
+Falls GitHub Pages im Repository noch nie verwendet wurde, kann einmalig die Bestätigung unter **Settings → Pages → Source: GitHub Actions** erforderlich sein.
 
 ## Projektunterlagen
 

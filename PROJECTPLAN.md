@@ -398,6 +398,7 @@ Abnahmekriterien:
 
 **Priorität:** Kann  
 **Aufwand:** 0,5–1 Tag  
+**Status:** umgesetzt
 **Abhängigkeiten:** Entscheidung für GitHub Pages, statische Build-Konfiguration
 
 Aufgaben:
