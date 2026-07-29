@@ -1,6 +1,6 @@
 {
-  "course": "Umschulung Fachinformatik – Gruppe 24B",
-  "instructor": "Max Mustermann",
+  "course": "Fachinformatik – Gruppe 24B",
+  "instructor": "Dozent/in",
   "participants": [
     { "id": 1, "name": "Aylin K.", "initials": "AK" },
     { "id": 2, "name": "Daniel M.", "initials": "DM" },
