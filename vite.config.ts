@@ -7,6 +7,8 @@ export default defineConfig({
   build: {
     outDir: "pages-dist",
     emptyOutDir: true,
+    target: "es2015",
+    cssTarget: "safari12",
   },
   server: {
     host: "127.0.0.1",
