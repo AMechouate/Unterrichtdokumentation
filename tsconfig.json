@@ -14,6 +14,6 @@
     "allowImportingTsExtensions": false,
     "types": ["vite/client"]
   },
-  "include": ["src", "vite.config.ts"],
+  "include": ["src", "vite.config.ts", "vite.fallback.config.ts"],
   "exclude": ["node_modules"]
 }

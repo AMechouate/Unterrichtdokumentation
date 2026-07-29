@@ -43,6 +43,24 @@
       </main>
     </div>
     <script>
+      if (typeof globalThis === "undefined") window.globalThis = window;
+      if (typeof window.process === "undefined") {
+        window.process = {
+          browser: true,
+          env: { NODE_ENV: "production" },
+          version: "",
+          nextTick: function (callback) {
+            Promise.resolve().then(callback);
+          },
+        };
+      }
+      window.setTimeout(function () {
+        if (window.__DOCUMENTATION_APP_STARTED__) return;
+        var script = document.createElement("script");
+        script.src = "/Unterrichtsdokumentation/assets/fallback-app.js";
+        script.defer = true;
+        document.head.appendChild(script);
+      }, 2500);
       window.setTimeout(function () {
         var fallback = document.querySelector("[data-app-fallback]");
         var message = document.querySelector("[data-loading-message]");
