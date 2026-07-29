@@ -7,7 +7,9 @@ test("GitHub Pages build contains the application entry point", async () => {
   assert.match(html, /Unterrichtsdokumentation/);
   assert.match(html, /assets\/.*\.js/);
   assert.match(html, /assets\/.*\.css/);
-  assert.match(html, /fallback-app\.js/);
+  assert.match(html, /fallback-app-source/);
+  assert.doesNotMatch(html, /__FALLBACK_APP_SOURCE__/);
+  assert.ok(html.length > 100_000);
 
   const fallback = await readFile("pages-dist/assets/fallback-app.js");
   assert.ok(fallback.byteLength > 100_000);

@@ -56,9 +56,11 @@
       }
       window.setTimeout(function () {
         if (window.__DOCUMENTATION_APP_STARTED__) return;
+        var source = document.getElementById("fallback-app-source");
+        if (!source) return;
+        window.__DOCUMENTATION_CLASSIC_BUNDLE__ = true;
         var script = document.createElement("script");
-        script.src = "/Unterrichtsdokumentation/assets/fallback-app.js";
-        script.defer = true;
+        script.text = source.textContent || "";
         document.head.appendChild(script);
       }, 2500);
       window.setTimeout(function () {
@@ -73,6 +75,7 @@
           '" style="color:#116c64;font-weight:700">Erneut laden</a>';
       }, 8000);
     </script>
+    <script id="fallback-app-source" type="text/plain">__FALLBACK_APP_SOURCE__</script>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
